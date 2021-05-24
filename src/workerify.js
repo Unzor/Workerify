@@ -1,3 +1,8 @@
+/* Workerify v1.0
+https://github.com/Unzor/workerify
+Use however you want it.
+*/
+
 var workerify={};
 
 
