@@ -4,7 +4,7 @@ Workerify is a JavaScript library that lets you use JavaScript workers from URLs
 # API
 Examples:
 ```javascript
-var workerifyObject=new Worker().workerFromURL('https://workerify-testing.glitch.me/script.js');
+var workerifyObject=new Worker.workerFromURL('https://workerify-testing.glitch.me/script.js');
 workerifyObject.postMessage([1, 2]);
 workerifyObject.onmessage = function(e) {
 alert('Message received from worker: ' + JSON.stringify(e));
@@ -18,7 +18,7 @@ Returns:
 
 ## Example Code 2
 ```javascript
-var workerifyObject=new Worker().workerFromCode(`onmessage = function(e) {
+var workerifyObject=new Worker.workerFromCode(`onmessage = function(e) {
 console.log('Worker: Message received from main script');
 const result = e.data[0] * e.data[1];
 if (isNaN(result)) {
