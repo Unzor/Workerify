@@ -6,7 +6,7 @@
   </code>
   <h3> Example Code 1 </h3>
   <code>
-    var workerifyObject=new Worker().workerFromURL('https://workerify-testing.glitch.me/script.js'); <div></div>
+    var workerifyObject=new Worker.workerFromURL('https://workerify-testing.glitch.me/script.js'); <div></div>
 workerifyObject.postMessage([1, 2]);<div></div>
 workerifyObject.onmessage = function(e) {<div></div>
 alert('Message received from worker: ' + JSON.stringify(e));<div></div>
@@ -18,7 +18,7 @@ alert('Message received from worker: ' + JSON.stringify(e));<div></div>
   
     <p> Example Code 2 </p>
   <code>
-    var workerifyObject=new Worker().workerFromCode(`onmessage = function(e) {<div></div>
+    var workerifyObject=new Worker.workerFromCode(`onmessage = function(e) {<div></div>
   console.log('Worker: Message received from main script');<div></div>
   const result = e.data[0] * e.data[1];<div></div>
   if (isNaN(result)) {<div></div>
