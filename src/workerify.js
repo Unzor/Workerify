@@ -7,23 +7,12 @@ var workerify={};
 
 
 workerify.workerFromURL=function(url, callback_fn){
-var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-  var blob = new Blob([
-this.responseText
-], { type: "text/javascript" })
-
- var worker_obj_url = new Worker(window.URL.createObjectURL(blob));
-
-callback_fn(worker_obj_url);
-
-    }
-  };
-
-
-  xhttp.open("GET", url, true);
-  xhttp.send();
+function getWorkerURL(worker_url) {
+  const content = `importScripts( "${ worker_url }" );`;
+  return URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
+}
+  
+  return new Worker(getWorkerURL(url));
 }
 
 
