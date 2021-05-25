@@ -15,7 +15,7 @@ alert('Message received from worker: ' + JSON.stringify(e));<div></div>
   
     <p> Example Code 2 </p>
   <code>
-    var workerifyObject=workerify.workerFromURL(`onmessage = function(e) {<div></div>
+    var workerifyObject=workerify.createWorkerFromCode(`onmessage = function(e) {<div></div>
   console.log('Worker: Message received from main script');<div></div>
   const result = e.data[0] * e.data[1];<div></div>
   if (isNaN(result)) {<div></div>
