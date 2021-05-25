@@ -1,35 +1,37 @@
+
 <body>
   <h1> Workerify </h1>
   <p> Example Code 1 </p>
   <code>
-    var workerifyObject=workerify.workerFromURL('https://workerify-testing.glitch.me/script.js'); 
-workerifyObject.postMessage([1, 2]);
-workerifyObject.onmessage = function(e) {
-alert('Message received from worker: ' + JSON.stringify(e));
+    var workerifyObject=workerify.workerFromURL('https://workerify-testing.glitch.me/script.js'); <div></div>
+workerifyObject.postMessage([1, 2]);<div></div>
+workerifyObject.onmessage = function(e) {<div></div>
+alert('Message received from worker: ' + JSON.stringify(e));<div></div>
 }
   </code>
   
   <p> Returns: </p>
   <code>Message received from worker: {"istrusted": "true"}</code>
   
-    <p> Example Code 1 </p>
+    <p> Example Code 2 </p>
   <code>
-    var workerifyObject=workerify.workerFromURL(`onmessage = function(e) {
-  console.log('Worker: Message received from main script');
-  const result = e.data[0] * e.data[1];
-  if (isNaN(result)) {
-    postMessage('Please write two numbers');
-  } else {
-    const workerResult = 'Result: ' + result;
-    console.log('Worker: Posting message back to main script');
-    postMessage(workerResult);
-  }
-}`); 
-workerifyObject.postMessage([1, 2]);
-workerifyObject.onmessage = function(e) {
-alert('Message received from worker: ' + JSON.stringify(e));
+    var workerifyObject=workerify.workerFromURL(`onmessage = function(e) {<div></div>
+  console.log('Worker: Message received from main script');<div></div>
+  const result = e.data[0] * e.data[1];<div></div>
+  if (isNaN(result)) {<div></div>
+    postMessage('Please write two numbers');<div></div>
+  } else {<div></div>
+    const workerResult = 'Result: ' + result;<div></div>
+    console.log('Worker: Posting message back to main script');<div></div>
+    postMessage(workerResult);<div></div>
+  }<div></div>
+}`); <div></div>
+workerifyObject.postMessage([1, 2]);<div></div>
+workerifyObject.onmessage = function(e) {<div></div>
+alert('Message received from worker: ' + JSON.stringify(e));<div></div>
 }
   </code>
   
   <p> Returns: </p>
   <code>Message received from worker: {"istrusted": "true"}</code>
+</body>
