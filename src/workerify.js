@@ -3,10 +3,7 @@ https://github.com/Unzor/workerify
 Use however you want it.
 */
 
-var workerify={};
-
-
-workerify.workerFromURL=function(url, callback_fn){
+Worker.workerFromURL=function(url){
 function getWorkerURL(worker_url) {
   const content = `importScripts( "${ worker_url }" );`;
   return URL.createObjectURL( new Blob( [ content ], { type: "text/javascript" } ) );
@@ -16,7 +13,7 @@ function getWorkerURL(worker_url) {
 }
 
 
-workerify.createWorkerFromCode=function(code){
+Worker.workerFromCode=function(code){
   var blob = new Blob([
 code
 ], { type: "text/javascript" })
